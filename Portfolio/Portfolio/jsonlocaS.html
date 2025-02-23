@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSON with Local Storage</title>
+</head>
+<body>
+    <h2>Store Data in JSON using Local Storage</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <button onclick="saveData()">Save</button>
+    <button onclick="showData()">Show Data</button>
+    <button onclick="clearData()">Clear Data</button>
+    
+    <h3>Stored Data:</h3>
+    <p id="output"></p>
+
+    <script>
+        function saveData() {
+            let name = document.getElementById("name").value;
+            if (!name) {
+                alert("Please enter a name!");
+                return;
+            }
+
+            // Get existing data or initialize an empty array
+            let data = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Add new name to the array
+            data.push({ name: name });
+
+            // Save updated data back to localStorage
+            localStorage.setItem("users", JSON.stringify(data));
+
+            alert("Data saved successfully!");
+        }
+
+        function showData() {
+            let data = JSON.parse(localStorage.getItem("users"));
+        
+            if (!data || data.length === 0) {
+                document.getElementById("output").innerText = "No data found!";
+            } else {
+            // Extract names and join them with line breaks
+                let names = data.map(item => item.name).join("\n");
+            document.getElementById("output").innerText = "Stored Names:" + names;
+            }
+        }
+
+
+        function clearData() {
+            localStorage.removeItem("users");
+            document.getElementById("output").innerText = "Data cleared!";
+            alert("Local storage cleared!");
+        }
+    </script>
+</body>
+</html>

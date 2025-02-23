@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+  <link rel="icon" type="image/png" href="/images/fav.jpg" />
+  <script>
+    function showMessage() {
+      alert("Button clicked!");
+      //console.log("Button clicked logged in console.");
+    }
+  </script>
+</head>
+<body>
+  <h1>JavaScript Basics</h1>
+  <p id="demo">This is a paragraph.</p>
+  <button onclick="showMessage()">Click Me</button>
+  <button onclick="window.print()">Print Page</button>
+   <p id="demo1"></p>
+  <script>
+    let x = 5;
+    let X; 
+    let st=false;
+    if (st) {
+    console.log("x is greater than 10");}
+
+    //document.getElementById("demo1").innerHTML=x;
+    console.log(x);
+    document.write("<p>This is added by JavaScript.</p>");
+
+    x=10;
+    const y=3;
+    //y=10;
+    console.log(y);
+
+    const Person={name:"Afrid",
+        age:"20"
+    };
+    console.log(Person.name);
+
+    function add(a,b){
+      let w= a+b;
+      return w;
+    }
+    let ans= add(2,3);
+    console.log(ans);
+
+    let strings= "Stringtt";
+    console.log(strings.length);
+    let strings2=strings.replace("tr", "TR");
+    console.log(strings);
+    console.log(strings2.toUpperCase());
+    console.log(strings2.toLowerCase());
+    console.log(strings2.concat(strings) );
+    console.log(strings.lastIndexOf("t") );
+    let b=BigInt(1000000000000000000);
+    console.log(b);
+
+    const a=["red", "blue","skyblue"];
+    console.log(a[0]);
+
+  </script>
+</body>
+</html>
